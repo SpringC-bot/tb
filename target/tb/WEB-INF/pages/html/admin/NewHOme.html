@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../../../resources/css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../../resources/js/jquery.min.js"></script>
+    <script src="../../../../resources/js/bootstrap.min.js"></script>
+
+    <style>
+        tr{
+            width: 800px;
+            height: 50px;
+        }
+        #div_table{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        #table_one{
+            height: 10%;
+            width: 70%;
+        }
+        .td1{
+            width: 70%;
+        }
+        body{
+            background-color: white;
+        }
+        h1,h2,h3,h4,h5,p,a{
+            word-wrap:break-word;
+            word-break:break-all;
+        }
+        body{
+            background-color: white;
+            background-image: url("../../../../resources/images/k-on.jpg");
+            background-repeat: repeat-y;
+            background-size: 100%;
+        }
+        #width_nav{
+            width: 27%;
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <!--顶部导航-->
+    <nav class="navbar  navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false">
+                    <!--<span class="caret"></span>-->
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <!--定义品牌-->
+                <a class="navbar-brand" href="#">贴吧</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!--定义首页-->
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#about">新闻</a></li>
+                    <li><a href="#contact">下载APP</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true"
+                           aria-expanded="false">其他 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                            <li><a href="#">工作人员</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">更多</li>
+                            <li><a href="#">问题反馈</a></li>
+                            <li><a href="#">服务中心</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--搜索框-->
+                <div class="navbar-form navbar-left">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                         <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+    <div class="container" id="div_table">
+        <!--侧边导航-->
+        <div id="width_nav" class="pull-right">
+            <!--新闻栏-->
+            <div class="sidebar-module">
+                <h4>Archives</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">March 2014</a></li>
+                    <li><a href="#">February 2014</a></li>
+                    <li><a href="#">January 2014</a></li>
+                    <li><a href="#">December 2013</a></li>
+                    <li><a href="#">November 2013</a></li>
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                    <li><a href="#">June 2013</a></li>
+                    <li><a href="#">May 2013</a></li>
+                    <li><a href="#">April 2013</a></li>
+                </ol>
+            </div>
+            <br/>
+            <!--标签栏-->
+            <div>
+                <h4>标签栏</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">赛博朋克2077</a></li>
+                    <li><a href="#">GTA5</a></li>
+                    <li><a href="#">奥德赛</a></li>
+                </ol>
+            </div>
+            <br/>
+            <div>
+                <h4>今日热议</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">如何造车</a></li>
+                    <li><a href="#">如何打拳</a></li>
+                    <li><a href="#">一气之下写了个论坛</a></li>
+                </ol>
+            </div>
+            <br/>
+            <!--统计栏-->
+            <div>
+                <h4>统计栏</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">注册人数</a></li>
+                    <li><a href="#">在线人数</a></li>
+                    <li><a href="#">回复统计</a></li>
+                </ol>
+            </div>
+            <br/>
+            <!--按钮-->
+            <div class="btn-group-vertical  center-block" role="group">
+                <button type="button" class="btn-default btn-lg" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                </button>
+                <br/>
+                <button type="button" class="btn-default btn-lg " aria-label="Left Align">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </button>
+                <br/>
+                <button type="button" class="btn-default btn-lg" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div><!-- /.blog-sidebar -->
+
+        <!--内容-->
+        <table id="table_one" class="table-hover" >
+            <tr>
+                <td class="td1">
+                    <button class="btn btn-default">技术</button>
+                    <button class="btn btn-default">创意</button>
+                    <button class="btn btn-default">好玩</button>
+                    <button class="btn btn-default">城市</button>
+                    <button class="btn btn-default">最热</button>
+                    <button class="btn btn-default">新闻</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>程序员&nbsp</a>
+                    <a>Java&nbsp</a>
+                    <a>MySql&nbsp</a>
+                    <a>Git&nbsp</a>
+                    <a>JavaScript&nbsp</a>
+                    <a>Maven&nbsp</a>
+                    <a>Vue&nbsp</a>
+                    <a>spring&nbsp</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 >
+                        <a href="#">我想要找好工作，大伙们怎么看</a>
+                        <span class="badge pull-right">14</span><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </td>
+            </tr>
+        </table>
+
+        <nav aria-label="Page navigation"  >
+            <ul class="pagination ">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+
+    <!--页脚-->
+    <div>
+        <footer class="panel-footer">
+            <div class="container text-center">
+                <p>Blog由<a href="£">wongf02@163.com</a>构建<a href="£">myblog</a></p>
+                <p class="text-muted">Place sticky footer content here.</p>
+                <p>关于blog</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

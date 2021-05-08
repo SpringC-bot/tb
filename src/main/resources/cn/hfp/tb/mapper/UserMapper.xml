@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--user的映射-->
+<mapper namespace="cn.hfp.tb.mapper.UserMapper">
+    <resultMap id="Msg_User" type="cn.hfp.tb.pojo.User">
+        <id column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_nick_name" property="nickName" jdbcType="VARCHAR"/>
+        <result column="user_password" property="password" jdbcType="VARCHAR"/>
+        <result column="user_gender" property="gender" jdbcType="INTEGER"/>
+        <result column="user_email" property="email" jdbcType="VARCHAR"/>
+        <result column="user_phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="user_register" property="register" jdbcType="DATE"/>
+        <result column="user_avatar" property="avatar" jdbcType="VARCHAR"/>
+        <result column="user_status" property="status" jdbcType="INTEGER"/>
+        <result column="user_ip_msg" property="ip" jdbcType="INTEGER"/>
+        <result column="user_attention_msg" property="attention" jdbcType="INTEGER"/>
+        <result column="user_history_msg" property="history" jdbcType="INTEGER"/>
+        <result column="user_collection_msg" property="collection" jdbcType="INTEGER"/>
+
+    </resultMap>
+    <select id="selectAllUser" resultMap="Msg_User">
+        select * from user
+    </select>
+
+    <!--通过邮箱查询用户-->
+    <select id="selectByEmail" parameterType="String" resultMap="Msg_User">
+        select * from user
+        <where>
+            user_email = #{email}
+        </where>
+    </select>
+
+    <!--创建用户-->
+    <insert id="insertUser" parameterType="cn.hfp.tb.pojo.User" >
+        insert into user (user_name,user_nick_name,user_password,user_gender,user_email,user_phone,user_register,user_status)
+         values (#{userName},#{nickName},#{password},#{gender},#{email},#{phone},#{register},#{status})
+    </insert>
+</mapper>

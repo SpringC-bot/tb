@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="../../../../../resources/js/vue.js"></script>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h2 v-once>{{message}}</h2>
+        <h2 v-for="i in people">{{i}}</h2>
+        <ui>
+            <li v-for="a in people">作者为{{a}}</li>
+        </ui>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                message:'adc',
+                people:["abc",'asda','asfaf','asfa']
+            }
+        })
+    </script>
+</body>
+</html>

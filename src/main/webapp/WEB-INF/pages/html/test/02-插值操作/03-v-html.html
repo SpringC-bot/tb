@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="../../../../../resources/js/vue.js"></script>
+    <!--<div id="app">
+        <h2>{{message}}</h2>
+        <h2 v-html="url"></h2>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data: {
+                message:'Hi',
+                url:'<a href="http://www.baidu.com">这是百度</a>'
+            }
+        })
+    </script>-->
+    <div id="app">
+        <h2 v-html="url"></h2>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                url:'<a href="http://www.baidu.com">这是百度</a>'
+            }
+        })
+    </script>
+
+</body>
+</html>

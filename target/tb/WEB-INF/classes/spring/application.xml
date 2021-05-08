@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--扫描包
+    <context:component-scan>查找使用构造型（stereotype）注解所标注的类，如@Component(组件)，@Service（服务），@Controller（控制器），@Repository（数据仓库）。
+    -->
+    <context:component-scan base-package="cn.hfp.tb">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--读取db.properties-->
+    <context:property-placeholder location="classpath:db.properties"/>
+    <!--配置SqlSessionFactoryBean-->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--配置数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis-config文件-->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <!--mapper.xml所在位置-->
+        <property name="mapperLocations" value="classpath*:cn/hfp/tb/mapper/*Mapper.xml"/>
+        <!--指定使用别名得pojo得包-->
+        <property name="typeAliasesPackage" value="cn.hfp.blog.pojo"/>
+    </bean>
+    <!--配置druid连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!-- ”连接“的基本属性  -->
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!-- 连接池属性 -->
+        <property name="initialSize" value="200" />
+        <property name="maxActive" value="1000" />
+        <property name="maxWait" value="60000" />
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="keepAlive" value="true" />
+        <!--<property name="timeBetweenEvictionRunsMillis" value="-1" />-->
+        <property name="minIdle" value="20" />
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="180"/>
+        <property name="logAbandoned" value="true" />
+        <property name="testWhileIdle" value="true" />
+        <!--<property name="validationQuery" value="SELECT 'x'" />-->
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        <property name="poolPreparedStatements" value="false"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
+<!--
+        <property name="filters" value="stat,wall,slf4j"/>
+-->
+        <property name="connectionProperties" value="druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000" />
+
+        <!-- 开启Druid的监控统计功能,StatFilter可以和其他的Filter配置使用 -->
+        <!--<property name="filters" value="stat"/>-->
+
+        <!-- proxyFilters属性配置,通过bean的方式配置 -->
+       <!-- <property name="proxyFilters">
+            <list>
+                <ref bean="log-filter"/>
+            </list>
+        </property>-->
+
+    </bean>
+
+    <!-- 上面的druid的配置 -->
+    <!--<bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4j2Filter"  destroy-method="destroy">
+        &lt;!&ndash; 所有连接相关的日志 &ndash;&gt;
+        <property name="connectionLogEnabled" value="false"/>
+        &lt;!&ndash; 所有Statement相关的日志 &ndash;&gt;
+        <property name="statementLogEnabled" value="false"/>
+        &lt;!&ndash; 是否显示结果集 &ndash;&gt;
+        <property name="resultSetLogEnabled" value="true"/>
+        &lt;!&ndash; 是否显示SQL语句 &ndash;&gt;
+        <property name="statementExecutableSqlLogEnable" value="true"/>
+    </bean>-->
+
+
+    <!--spring和mybatis整合的关键：扫描所有的mapper包-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.hfp.tb.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+    </bean>
+
+    <!--声明事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+   <!-- 注解驱动，支持注解
+    <tx:annotation-driven/>-->
+
+    <!--设置事务的传播特性-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置参与事务的类-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.hfp.tb.service.impl.*.*(..))"/>
+    </aop:config>
+
+</beans>

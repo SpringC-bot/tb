@@ -1,0 +1,31 @@
+tr{
+    width: 800px;
+    height: 50px;
+}
+#div_table{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+#table_one{
+    height: 10%;
+    width: 70%;
+}
+.td1{
+    width: 70%;
+}
+body{
+    background-color: white;
+    background-image: url("../images/k-on.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+h1,h2,h3,h4,h5,p,a{
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+#width_nav{
+    width: 27%;
+    margin-top: 5%;
+}

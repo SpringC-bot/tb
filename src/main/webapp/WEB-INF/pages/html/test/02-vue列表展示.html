@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../resources/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        {{movies}}
+        <ul>
+            <li>{{movies[0]}}</li>
+            <li>{{movies[1]}}</li>
+            <li>{{movies[2]}}</li>
+            <li>{{movies[3]}}</li>
+        </ul>
+        <ul>
+            <li v-for="item in movies">{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+
+        const app = new Vue({
+            el:"#app",
+            data:{
+                message:'Hi',
+                movies:['海王','星际穿越','大话西游','少年派的奇幻漂流','盗墓空间']
+            }
+        })
+    </script>
+
+</body>
+</html>

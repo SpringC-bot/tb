@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>tieba</title>
+    <!-- Bootstrap -->
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!--jquery要在bootstrap.js前面-->
+    <script src="../../../resources/js/jquery.min.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js"></script>
+    <script>
+        $("tieba").click(function(){
+
+        })
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="tieba" href="#">贴吧</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="navbar-form navbar-left"  >
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#">Link</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!--左侧导航栏-->
+    <div class="pull-left   navbar-left visible-lg" >
+        <div class="btn-group-vertical col-lg-2 center-block" role="group">
+            <button type="button" class="btn-default btn-lg" aria-label="Left Align">
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn-default btn-lg " aria-label="Left Align">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn-default btn-lg" aria-label="Left Align">
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <!--/.sidebar-offcanvas-->
+
+    <!--右侧导航栏-->
+    <!--<%&#45;&#45;col-sm-3 col-sm-offset-1&#45;&#45;%>-->
+    <div class="pull-right col-lg-2 navbar-right visible-lg">
+       <!-- <div>
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>-->
+        <div class="sidebar-module ">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+                <li><a href="#">March 2014</a></li>
+                <li><a href="#">February 2014</a></li>
+                <li><a href="#">January 2014</a></li>
+                <li><a href="#">December 2013</a></li>
+                <li><a href="#">November 2013</a></li>
+                <li><a href="#">October 2013</a></li>
+                <li><a href="#">September 2013</a></li>
+                <li><a href="#">August 2013</a></li>
+                <li><a href="#">July 2013</a></li>
+                <li><a href="#">June 2013</a></li>
+                <li><a href="#">May 2013</a></li>
+                <li><a href="#">April 2013</a></li>
+            </ol>
+        </div>
+        <div>
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ol>
+        </div>
+    </div><!-- /.blog-sidebar -->
+
+    <div class="container center-block" >
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div>
+                    <h4 >
+                        <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                        <a class="small ">author:123456</a>
+                        <a class="small">发布时间：2021/01/01 23:55:06</a>
+                        <a class="small">更新时间：2021/03/03 04:08:16</a>
+                    </h4>
+                    <h5 style="word-wrap:break-word; word-break:break-all;"><!--word-wrap:break-word; word-break:break-all; 解决文本溢出-->
+                        文章内容
+                        zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjkahgahga;skajgaksfghaklsdflaksgahkslf
+                        均符合国家拉黑法国军事对抗疗法规划建设了士大夫来个火山大佬四点零分供货实力的回复乐山大佛和工具栏上的回复
+                        塑料袋封口估计是考虑对方进攻岁的法国就是考虑对方进攻受到法国佳士得付款了几个
+                    </h5>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+            <li class="list-group-item">
+                <h4 >
+                    <a href="#">文章一的标题fgnlkdfghjl</a><br/>
+                    <a class="small ">author:123456</a>
+                    <a class="small">发布时间：2021/01/01 23:55:06</a>
+                    <a class="small">更新时间：2021/03/03 04:08:16</a>
+                </h4>
+                <p>
+                    zhealhlajfghjklhjklfghkljafhgklajfhgjkahfgjasdjk
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container col-lg-12" >
+        <footer class="panel-footer" >
+            <div class="container; text-center">
+                <p>Blog由<a href="£">wongf02@163.com</a>构建<a href="£">myblog</a></p>
+                <p class="text-muted">Place sticky footer content here.</p>
+                <p>关于blog</p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+</html>

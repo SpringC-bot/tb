@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hfp.tb.mapper.ArticleMapper">
+    <resultMap id="Msg_Article" type="cn.hfp.tb.pojo.Article">
+        <id column="article_id" property="id" jdbcType="INTEGER"/>
+        <result column="article_author_id" property="aid" jdbcType="INTEGER"/>
+        <result column="article_title" property="title" jdbcType="VARCHAR"/>
+        <result column="article_content" property="content" jdbcType="VARCHAR"/>
+        <result column="article_statu" property="status" jdbcType="INTEGER"/>
+        <result column="article_create_time" property="createTime" jdbcType="DATE"/>
+        <result column="article_update_time" property="updateTime" jdbcType="DATE"/>
+        <result column="article_summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="article_tag" property="tag" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="selectAllArticle"  resultMap="Msg_Article">
+        select * from article
+    </select>
+
+</mapper>

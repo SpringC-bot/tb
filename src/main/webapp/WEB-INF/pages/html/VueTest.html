@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../resources/js/vue.js"></script>
+</head>
+<body>
+    <div id="noOne">
+        <h1>Hello{{name}}</h1>
+        <h2>登录时间{{time}}</h2>
+    </div>
+    <script>
+        const noOne = new Vue({
+            el:'#noOne',
+            data:{
+                name:'张三',
+                time:'2021-10-10'
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hfp.tb.mapper.UserCommentMapper">
+    <resultMap id="Msg_Comment" type="cn.hfp.tb.pojo.UserComment">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="article_id" property="articleId" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="comment_content" property="content" jdbcType="VARCHAR"/>
+        <result column="comment_time" property="time" jdbcType="DATE"/>
+    </resultMap>
+
+    <select id="findAllComment" resultMap="Msg_Comment">
+        select * from user_comment
+    </select>
+</mapper>
